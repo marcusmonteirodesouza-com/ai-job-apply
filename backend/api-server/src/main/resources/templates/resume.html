@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Resume</title>
+</head>
+
+<body>
+    <h1>Name: [[${name}]]</h1>
+    <p>Contact Information: [[${contactInfo}]]</p>
+    <p>Location: [[${location}]]</p>
+
+    <h2>Summary</h2>
+    <p>[[${summary}]]</p>
+
+    <h2>Skills</h2>
+    <ul>
+        <li th:each="skill : ${skills}">[[${skill}]]</li>
+    </ul>
+
+    <h2>Experience</h2>
+    <div th:each="exp : ${experienceList}">
+        <h3>[[${exp.title}]] at [[${exp.company}]]</h3>
+        <p>Location: [[${exp.location}]]</p>
+        <p>Duration: [[${exp.duration}]]</p>
+        <p>Responsibilities:</p>
+        <ul>
+            <li th:each="resp : ${exp.responsibilities}">[[${resp}]]</li>
+        </ul>
+    </div>
+
+    <h2>Education</h2>
+    <div th:each="edu : ${educationList}">
+        <p>Degree: [[${edu.degree}]]</p>
+        <p>Institution: [[${edu.institution}]]</p>
+        <p>Graduation Year: [[${edu.graduationYear}]]</p>
+        <p>Relevant Coursework or Projects:</p>
+        <ul>
+            <li th:each="course : ${edu.coursework}">[[${course}]]</li>
+        </ul>
+    </div>
+
+    <h2>Certifications</h2>
+    <ul>
+        <li th:each="cert : ${certifications}">[[${cert}]]</li>
+    </ul>
+
+    <h2>Job Description & Company Information</h2>
+    <p>Job Title Applying For: [[${jobTitleApplyingFor}]]</p>
+    <p>Company Name: [[${companyName}]]</p>
+    <p>Job Description: [[${jobDescription}]]</p>
+    <p>Company Values/Culture: [[${companyValues}]]</p>
+</body>
+
+</html>
